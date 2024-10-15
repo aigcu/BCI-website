@@ -57,7 +57,7 @@ class Particle {
         // Boundary checks: keep particles inside the canvas
         if (this.x - this.size < 0) {
             this.x = this.size;
-            this.speedX *= -0.5;g
+            this.speedX *= -0.5;
         }
         if (this.x + this.size > canvas.width) {
             this.x = canvas.width - this.size;
