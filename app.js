@@ -9,6 +9,7 @@ function resizeCanvas() {
 
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
+window.addEventListener('resize', createParticles);
 
 const particles = [];
 const mouse = {
@@ -21,13 +22,13 @@ class Particle {
     constructor(x, y) {
         this.x = x;
         this.y = y;
-        this.size = Math.random() * 5 + 1;
+        this.size = Math.random() * 2;
         this.baseX = this.x;
         this.baseY = this.y;
         this.speedX = Math.random() * 0.2 - 0.1; // horizontal movement
         this.speedY = Math.random() * 0.2 - 0.1; //vertical movement
         this.driftFactor = 0.01;
-        this.color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        this.color = `#2DD4BF`;
     }
 
     update() {
@@ -83,7 +84,7 @@ class Particle {
 }
 
 function createParticles() {
-    const numberOfParticles = 1_000;
+    const numberOfParticles = 3_000;
     particles.length = 0;
     for (let i = 0; i < numberOfParticles; i++) {
         const x = Math.random() * canvas.width;
@@ -110,7 +111,7 @@ canvas.addEventListener('mouseleave', () => {
 });
 
 function animate() {
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = '#0F172A';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     handleParticles();
     requestAnimationFrame(animate);
@@ -118,3 +119,4 @@ function animate() {
 
 createParticles();
 animate();
+resizeCanvas();

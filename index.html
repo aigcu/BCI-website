@@ -10,7 +10,8 @@
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <!--Favicon-->
     <link rel="icon" type="image/x-icon" href="media/favicon.ico">
 </head>
@@ -18,25 +19,38 @@
     <!-- Nav Bar -->
     <nav>
         <a href="https://aigcu.org/"><img src="./media/whiteLogo.png" alt="CAIR LOGO"></a>
-        <h1>BCI</h1>
+        <div class="nav-right">
+            <a href="#about" class="nav-items">About</a>
+            <a href="#mission" class="nav-items">Mission</a>
+            <a href="#team"class="nav-items">Team</a>
+        </div>
     </nav>
     <!--Animation-->
     <div class="canvas-container">
         <canvas id="interactiveCanvas" style="width: 100%; height: 100%;"></canvas>
-        <div id="message-container">
-            <h1>Brain-Computer Interface</h1>
-        </div>
+       
     </div>
+    <section style="position: relative; top: 10px; height: 700px; width: 100%;">
+        <div id="message-container">
+            <h1>Brain-Computer Interface Team</h1>
+        </div>
+    </section>
+
     <!-- about us Section -->
-    <section class="about">
+    <section class="about" id="about" >
+
         <h2>About Us</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi magni perspiciatis assumenda molestiae dolor praesentium odit! Deserunt, officia. Itaque dignissimos recusandae perspiciatis quia saepe accusamus, nobis quo cum? Voluptatibus?
-            Molestiae perferendis, ex accusamus iure eveniet expedita, optio fugiat explicabo vel corrupti cum dolorum libero? Distinctio excepturi temporibus recusandae quae libero eius, cumque dolore unde officia voluptate necessitatibus officiis! Hic?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut modi magni perspiciatis assumenda molestiae
+            dolor praesentium odit! Deserunt, officia. Itaque dignissimos recusandae perspiciatis quia saepe accusamus,
+            nobis quo cum? Voluptatibus?
+            Molestiae perferendis, ex accusamus iure eveniet expedita, optio fugiat explicabo vel corrupti cum dolorum
+            libero? Distinctio excepturi temporibus recusandae quae libero eius, cumque dolore unde officia voluptate
+            necessitatibus officiis! Hic?
         </p>
     </section>
     <!-- Mission Section -->
-     <section class="mission">
+    <section class="mission" id="mission">
         <h2>Our mission</h2>
         <p>
             This cross-discipline project aims to explore, build, and test a brain-computer interface (BCI) product that
@@ -45,18 +59,18 @@
             healthcare industry and the lives of those confined to the boundary of their bodies by providing them with a
             more intuitive and independent means of mobility.
         </p>
-     </section>
+    </section>
 
-     <!-- Team Section -->
-      <section>
+    <!-- Team Section -->
+    <section id="team">
         <h2>The Team</h2>
         <div class="team-container">
             <div class="team-item">
-                <img src="./media/team/ObadiahFusco.jpg" alt="Obadiah Fusco" class="profile-picture">
+                <img src="./media/team/KarikFreiheit.jpg" alt="Karik Freiheit" class="profile-picture">
                 <div class="team-info">
-                    <p class="name">Obadiah Fusco</p>
-                    <p class="major">Software Development</p>
-                    <a href="mailto:ofusco@my.gcu.edu" class="email">ofusco@my.gcu.edu</a>
+                    <p class="name">Karik Freiheit</p>
+                    <p class="major">Computer Science</p>
+                    <a href="mailto:kfreiheit@my.gcu.edu" class="email">kfreiheit@my.gcu.edu</a>
                 </div>
             </div>
             <div class="team-item">
@@ -68,49 +82,33 @@
                 </div>
             </div>
             <div class="team-item">
-                <img src="./media/team/ObadiahFusco.jpg" alt="Obadiah Fusco" class="profile-picture">
+                <img src="./media/team/ZacharyPeterson.jpg" alt="Zachary Peterson" class="profile-picture">
                 <div class="team-info">
-                    <p class="name">Obadiah Fusco</p>
+                    <p class="name">Zachary Peterson</p>
                     <p class="major">Software Development</p>
-                    <a href="mailto:ofusco@my.gcu.edu" class="email">ofusco@my.gcu.edu</a>
+                    <a href="mailto:zpeterson4@my.gcu.edu" class="email">zpeterson4@my.gcu.edu</a>
                 </div>
             </div>
             <div class="team-item">
-                <img src="./media/team/ObadiahFusco.jpg" alt="Obadiah Fusco" class="profile-picture">
+                <img src="./media/team/GavinHiggins.jpg" alt="Gavin Higgins" class="profile-picture">
                 <div class="team-info">
-                    <p class="name">Obadiah Fusco</p>
+                    <p class="name">Gavin Higgins</p>
                     <p class="major">Software Development</p>
-                    <a href="mailto:ofusco@my.gcu.edu" class="email">ofusco@my.gcu.edu</a>
+                    <a href="mailto:ghiggins6@my.gcu.edu" class="email">ghiggins6@my.gcu.edu</a>
                 </div>
             </div>
             <div class="team-item">
-                <img src="./media/team/ObadiahFusco.jpg" alt="Obadiah Fusco" class="profile-picture">
+                <img src="./media/team/ShreyasDamera.jpg" alt="Shreyas Damera" class="profile-picture">
                 <div class="team-info">
-                    <p class="name">Obadiah Fusco</p>
+                    <p class="name">Shreyas Damera</p>
                     <p class="major">Software Development</p>
-                    <a href="mailto:ofusco@my.gcu.edu" class="email">ofusco@my.gcu.edu</a>
-                </div>
-            </div>
-            <div class="team-item">
-                <img src="./media/team/ObadiahFusco.jpg" alt="Obadiah Fusco" class="profile-picture">
-                <div class="team-info">
-                    <p class="name">Obadiah Fusco</p>
-                    <p class="major">Software Development</p>
-                    <a href="mailto:ofusco@my.gcu.edu" class="email">ofusco@my.gcu.edu</a>
-                </div>
-            </div>
-            <div class="team-item">
-                <img src="./media/team/ObadiahFusco.jpg" alt="Obadiah Fusco" class="profile-picture">
-                <div class="team-info">
-                    <p class="name">Obadiah Fusco</p>
-                    <p class="major">Software Development</p>
-                    <a href="mailto:ofusco@my.gcu.edu" class="email">ofusco@my.gcu.edu</a>
+                    <a href="mailto:shreyasdamera@gmail.com" class="email">shreyasdamera@gmail.com</a>
                 </div>
             </div>
         </div>
-      </section>
-      <footer>
+    </section>
+    <footer>
         <p>© 2024-2025 - CAIR</p>
-      </footer>
+    </footer>
 </body>
 </html>
