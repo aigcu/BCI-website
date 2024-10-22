@@ -1,6 +1,26 @@
 // Code generated with the help of chatGPT
 const canvas = document.getElementById('interactiveCanvas');
 const ctx = canvas.getContext('2d');
+// HTML els
+const mobileNavBtn = document.getElementById("hamburger-menu");
+const mobileLinks = document.querySelectorAll(".nav-right a");
+const nav = document.querySelector("nav");
+const bodyEl = document.querySelector('body');
+
+mobileNavBtn.addEventListener("click", function () {
+    nav.classList.toggle("nav-active");
+    if (nav.classList.contains("nav-active")) {
+        bodyEl.style.overflowY = "hidden";
+    } else {
+        bodyEl.style.overflowY = "auto";
+    }
+});
+
+mobileLinks.forEach((l) => l.addEventListener("click", () => {
+    nav.classList.remove("nav-active");
+    bodyEl.style.overflowY = "auto";
+}))
+
 
 function resizeCanvas() {
     canvas.width = canvas.clientWidth;
