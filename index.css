@@ -14,12 +14,21 @@ body {
 
 
 nav a{
-    height: 100%;
     padding-top: 5px;
     padding-left: 10px;
     text-decoration: none;
     color: inherit;
 }
+
+#logo {
+    height: 4rem;
+}
+
+/* change color of hamburger menu via svg code */
+#hamburger-menu {
+    display: none;
+}
+
 nav {
     background-color: #0F172A90;
     height: 4.5rem;
@@ -72,7 +81,6 @@ canvas {
     display: block;
     background-color: #140b24;
     width: 100%;
-    height: 20rem;
 }
 
 .canvas-container {
@@ -116,7 +124,6 @@ section p {
 }
 
 .about {
-    height: 40rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -125,7 +132,6 @@ section p {
 }
 
 .mission {
-    height: 40rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -195,4 +201,60 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+@media screen and (max-width: 670px) {
+    #logo {
+        height: 3rem;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        /* Dark, semi-transparent background */
+        background-color: rgba(15, 23, 42, 0.9);
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        /* Hide menu off-screen */
+        transition: all 0.3s ease-in-out;
+        transform: translateX(100%);
+    }
+
+    .nav-items {
+        margin: 1.5rem 0;
+        font-size: 1.5rem;
+        text-align: center;
+        color: white;
+    }
+
+    .nav-items:hover {
+        color: #2DD4BF;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    #hamburger-menu {
+        display: block;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    /* When the mobile menu is active */
+    .nav-active .nav-right {
+        transform: translateX(0);
+        /* Slide menu into view */
+    }
+
+    /* Hamburger Menu Styling */
+    #hamburger-menu {
+        width: 30px;
+        margin-right: 10px;
+    }
 }
