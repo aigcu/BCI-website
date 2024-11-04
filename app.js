@@ -59,6 +59,7 @@ class Particle {
         this.y += this.speedY;
 
         // Interaction with the mouse: particles are pushed away when close
+        /* Disabled because canvas is drawn under all elements so doesn't work anyways
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
@@ -73,7 +74,7 @@ class Particle {
 
             this.x -= directionX;
             this.y -= directionY;
-        }
+        }*/
 
         // Boundary checks: keep particles inside the canvas
         if (this.x - this.size < 0) {

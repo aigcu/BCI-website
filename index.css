@@ -22,8 +22,18 @@ nav a{
 
 #logo {
     height: 4rem;
+    width: 4rem;
+    color: #2DD4BF;
 }
-
+.logo-text{
+    padding-left: 20px;
+    height: 100px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+    vertical-align: middle;
+}
 /* change color of hamburger menu via svg code */
 #hamburger-menu {
     display: none;
@@ -149,6 +159,7 @@ section p {
 }
 
 .team-item {
+    position: relative;
     background: #0F172A;
     border:  solid #ffffff60 1px;
     border-radius: 10px;
