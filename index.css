@@ -183,6 +183,13 @@ section p {
     margin-top: 15px;
 }
 
+.linkedin-icon {
+    position: absolute;
+    height: 3rem;
+    cursor: pointer;
+    top: 1.5rem;
+    right: 1.5rem;
+}
 
 .name {
     margin: 0;
