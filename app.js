@@ -38,6 +38,8 @@ const mouse = {
     radius: 100
 };
 
+
+
 class Particle {
     constructor(x, y) {
         this.x = x;
@@ -48,7 +50,7 @@ class Particle {
         this.speedX = Math.random() * 0.2 - 0.1; // horizontal movement
         this.speedY = Math.random() * 0.2 - 0.1; //vertical movement
         this.driftFactor = 0.01;
-        this.color = `#2DD4BF`;
+        this.color = `#892887`;
     }
 
     update() {
@@ -132,7 +134,7 @@ canvas.addEventListener('mouseleave', () => {
 });
 
 function animate() {
-    ctx.fillStyle = '#0F172A';
+    ctx.fillStyle = '#27173a';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     handleParticles();
     requestAnimationFrame(animate);
@@ -141,3 +143,4 @@ function animate() {
 createParticles();
 animate();
 resizeCanvas();
+

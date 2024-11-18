@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #0F172A;
+    background-color: #27173a;
     color: white;
     font-family: 'Montserrat', Verdana, Geneva, Tahoma, sans-serif;
 
@@ -23,7 +23,7 @@ nav a{
 #logo {
     height: 4rem;
     width: 4rem;
-    color: #2DD4BF;
+    color: #4de2f6;
 }
 .logo-text{
     padding-left: 20px;
@@ -40,7 +40,7 @@ nav a{
 }
 
 nav {
-    background-color: #0F172A90;
+    background-color: #27173a90;
     height: 4.5rem;
     position: fixed;
     width: 100%;
@@ -86,7 +86,9 @@ nav img {
     height: 100%;
     
 }
-
+h3{
+    color: #4de2f6;
+}
 canvas {
     display: block;
     background-color: #140b24;
@@ -160,7 +162,7 @@ section p {
 
 .team-item {
     position: relative;
-    background: #0F172A;
+    background: #27173a;
     border:  solid #ffffff60 1px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -187,7 +189,7 @@ section p {
 .name {
     margin: 0;
     font-size: 1.1em;
-    color: #2DD4BF;
+    color: #4de2f6;
 }
 
 .major {

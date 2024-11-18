@@ -16,6 +16,19 @@
     <link rel="icon" type="image/x-icon" href="media/favicon.ico">
 </head>
 <body>
+    <!-- Light to follow cursor-->
+    <div class="cursor-light" style="
+    pointer-events: none;
+    width: 1500px;
+    height: 1500px;
+    position: fixed;
+    z-index: 10;
+    background: radial-gradient(
+    700px,
+    rgba(29, 78, 216, 0.15),
+    transparent 100%
+    );
+    "></div>
     <!-- Nav Bar -->
     <nav>
         <div class="logo-text">BCI</div>
@@ -43,19 +56,19 @@
     <section class="about" id="projects" >
 
         <h2>Our Projects</h2>
-        <div style="display: flex; margin-top: 20px;">
-            <div style="display: flex; flex-direction: column; justify-content: space-evenly; margin-right: 45px;  max-width: 33%;">
+        <div style="display: flex;margin-top: 20px; flex-wrap: wrap;">
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
                 <h3>EEG-Based Wheelchair Control​</h3>
                 <p style="margin-top: 10px;">
                    Train an ML to read electrical signals from a non- invasive BCI. This would allow a user to control a motorized wheel-chair with their thoughts. This project would allow highly disabled patients with little or no limb movement to control the wheelchair.
             </div>
-            <div style="display: flex; flex-direction: column; margin-right: 45px;">
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
                 <h3>ASL Interpreter​</h3>
                 <p style="margin-top: 10px;">
                     Develop a computer vision system that translates American Sign Language into text or speech, facilitating communication for those who are hard of hearing or deaf.
                 </p>
             </div>
-            <div style="display: flex; flex-direction: column; margin-right: 45px;">
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
                 <h3>Thought to Text</h3>
                 <p style="margin-top: 10px;">
                     Utilize EEG signals to train a machine learning model that converts brain activity into text, potentially enabling non-verbal communication.
@@ -67,13 +80,13 @@
     <section class="mission" id="mission">
         <h2>Our mission</h2>
         <p>
-            Through this cross-disciplinary project, we aim to design, build, and test brain-computer interface (BCI) and computer vision technologies that empower individuals with disabilities. By enabling intuitive wheelchair control, translating American Sign Language to text or speech, and converting brain signals into text, we aspire to improve mobility, communication, and independence for those with physical and communicative challenges, ultimately advancing their quality of life and contributing to impactful healthcare solutions.
+            Through these cross-disciplinary projects, we aim to design, build, and test brain-computer interface (BCI) and computer vision technologies that empower individuals with disabilities. By enabling intuitive wheelchair control, translating American Sign Language to text or speech, and converting brain signals into text, we aspire to improve mobility, communication, and independence for those with physical and communicative challenges, ultimately advancing their quality of life and contributing to impactful healthcare solutions.
         </p>
     </section>
 
     <!-- Team Section -->
     <section id="team">
-        <h2>The Team</h2>
+        <h2>Our Team</h2>
         <div class="team-container">
            
             <div class="team-item">
@@ -143,6 +156,40 @@
                     <p class="name">Justin Diaz Zapata</p>
                     <p class="major">Computer Science</p>
                     <a href="mailto:jdiazz5002@gmail.com" class="email">jdiazz5002@gmail.com</a>
+                </div>
+            </div>
+            <div class="team-item">
+                <a href="https://www.linkedin.com/in/hovan-hodges"> <img src="./media/linkedin-logo.png" alt="linkedin-logo" style="position: absolute; width: 25px; height: 25px; bottom: 6px; left: 6px; z-index: 5; color: #2DD4BF;"></a>
+                <img src="./media/team/HovanHodges.jpg" alt="Hovan Hodges" class="profile-picture">
+                <div class="team-info">
+                    <p class="name">Hovan Hodges</p>
+                    <p class="major">Computer Science</p>
+                    <a href="mailto:HHodges4@my.gcu.edu" class="email">HHodges4@my.gcu.edu</a>
+                </div>
+            </div>
+            <div class="team-item">
+                <a href="www.linkedin.com/in/ariana-delpino-9536902a4"> <img src="./media/linkedin-logo.png" alt="linkedin-logo" style="position: absolute; width: 25px; height: 25px; bottom: 6px; left: 6px; z-index: 5; color: #2DD4BF;"></a>
+                <img src="./media/team/ArianaDelpino.jpg" alt="Ariana Delpino" class="profile-picture">
+                <div class="team-info">
+                    <p class="name">Ariana Delpino</p>
+                    <p class="major">Mechanical Engineering</p>
+                    <a href="mailto:adelpino1@my.gcu.edu" class="email">adelpino1@my.gcu.edu</a>
+                </div>
+            </div>
+            <div class="team-item">
+                <img src="./media/team/KimberlyNorton.jpg" alt="Kimberly Norton" class="profile-picture">
+                <div class="team-info">
+                    <p class="name">Kimberly Norton</p>
+                    <p class="major">Software Development</p>
+                    <a href="mailto:kimberflynorton@yahoo.com" class="email">kimberflynorton@yahoo.com</a>
+                </div>
+            </div>
+            <div class="team-item">
+                <img src="./media/team/TonyNguyen.jpg" alt="Tony Nguyen" class="profile-picture">
+                <div class="team-info">
+                    <p class="name">Tony Nguyen</p>
+                    <p class="major">Business information Systems</p>
+                    <a href="mailto:onyNguyenNgoc@icloud.com" class="email">onyNguyenNgoc@icloud.com</a>
                 </div>
             </div>
         </div>
