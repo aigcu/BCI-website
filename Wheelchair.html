@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAIR | BCI</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="app.js" defer></script>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+</head>
+<body>
+    <div class="canvas-container">
+        <canvas id="interactiveCanvas" style="width: 100%; height: 100%;"></canvas>
+       
+    </div>
+    <section style="position: relative; top: 10px; height: 700px; width: 100%;">
+        <div id="message-container">
+            <h1>Wheelchair progress updates</h1>
+        </div>
+    </section>
+    <!-- Light to follow cursor-->
+    <div class="cursor-light" style="
+    pointer-events: none;
+    width: 1500px;
+    height: 1500px;
+    position: fixed;
+    z-index: 10;
+    background: radial-gradient(
+    700px,
+    rgba(29, 78, 216, 0.15),
+    transparent 100%
+    );
+    "></div>
+    <!-- Nav Bar -->
+    <nav>
+        <div class="logo-text">BCI</div>
+        <a href="./media/Brain.svg" id="logo" style="color: red;"></a>
+        <div class="nav-right" style="justify-content: right;">
+            <a href="index.html" class="nav-items"style="float: right;">Back to main page</a>
+        </div>
+
+        <img src="./media/burger-menu.svg" alt="Menu" id="hamburger-menu">
+    </nav>
+
+    <section class="about" id="updates" >
+
+        <h2>Our updates</h2>
+        <div style="display: flex;margin-top: 20px; flex-wrap: wrap;">
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>​Beginning of year</h3>
+                <p style="margin-top: 10px;">Beginning data recording process: Using the OpenBCI GUI software select system control panel, then Cyton (live), then serial from dongle, then rename using (firstname-type of data-date taken). Then start with a 1 minute baseline with lights on, then they close their eyes and lights are off, then after a 2s delay of starting recording they are told to open their eyes to the slide and after 30s they close again and wait 10s, this is repeated for every color.
+                    <br>
+                    Formatted data was done through selecting b1 then data tab in new excel worksheet, selecting load from csv, selecting file and then the dropdown menu by load to select load into existing, selecting the query on the right to highlight table and uncheck header and banded row, then selecting remove style in the styles menu, the entire table is then dragged up one row, then select the topmost open row to the left of the table scrolling down the shift clicking the bottommost left open column space. Then at the top in the data part of the excel sheet enter in the number of the file being added starting at zero. This process is repeated for every one of the 9 files recorded for each person.
+                </p>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>10/28/2025​</h3>
+                <p style="margin-top: 10px;">
+                    This was the first day to collect data in a while and it took a bit to get back into, as a result Obidiah's data is missing a section so it is 8 instead of 9 files combined into the combined file. Also Nathan had one more file than what he should have and so one was not included to keep the 9 standard.
+                </p>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>11_04_2025​</h3>
+                <p style="margin-top: 10px;">
+                    This week we had Zachary, Nathan, and Shreyas record data. This session shows we may need to do some testing with the program itself instead of continuing to record data. First of all I noticed a pattern where for every single file that we record in a session has around 8,000 less rows than the previous no matter the length of recording. This makes it seem like data is either getting added that should not be or removed when it should not be. Secondly, I could not upload Shreyas data to github since the trying to add all of his data to one excel sheet failed as it had more than a million and some rows and it exceeded githubs file limit. There is something weird happening with the headset and the program and we need to figure it out.
+                </p>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>11_19_2025​</h3>
+                <p style="margin-top: 10px;">
+                    This week we figured out that using marker would remove the problem of stopping and starting the stream too much. So starting from this day the new procedure will be starting with eyes closed for 10 and then 10 more for more accurate data. seconds to account for the 2 seconds of wack data. Then first color for 30 seconds using the marker 1 to start and then stop the data collection. Then repeat for each of the numbers and the 0's in between the sectioned off numbers will be considered the baseline ignoring the minute of baseline recording at the beginning. Then after each color sectioned off 10 seconds of closing eyes to switch color and reset brain. Learned that to test data connection use the cyton signal widget and test each connection then wiggle until green. Data will now be uploaded in a text csv file instead of an excel file.
+                    <br>
+                    0. eyes closed (20 secs)
+                    <br>
+                    1. Mark
+                    <br>
+                    2. show color (eyes open) 30 secs
+                    <br>
+                    4. Mark
+                    <br>
+                    5. Eyes closed (10 secs)
+                    <br>
+                    6. Repeat from step 2 for each color
+                    <br>
+                </p>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>11_25_2025​</h3>
+                <p style="margin-top: 10px;">
+                    This was Thanksgiving break week and we all live in different states so no data was collected.
+                </p>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>12_02_2025​</h3>
+                <p style="margin-top: 10px;">
+                    Data was collected data using the format used in the week of 11_19_2025.
+                </p>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>12_09_2025​</h3>
+                <p style="margin-top: 10px;">
+                    Obadiah developed an automated system for collecting data using an open source library to use instead of the openbci software. Data was collected in this way using 5 second intervals for each color to record low length but a high amount of data allowing for easier collection of sample without human error. Data was recorded using this strategy on Obadiah to test our model for success with the colors.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</body>
+</html>

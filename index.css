@@ -204,7 +204,10 @@ section p {
     color: #ffffff;
     font-weight: bold;
 }
-
+.darken-on-hover:hover {
+    filter: brightness(75%); /* Darkens the element by 25% */
+    transition: filter 0.3s ease; /* Adds a smooth transition */
+}
 .email:hover {
     text-decoration: underline;
 }
