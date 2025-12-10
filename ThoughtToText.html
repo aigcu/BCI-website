@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAIR | BCI</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="app.js" defer></script>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+</head>
+<body>
+    <div class="canvas-container">
+        <canvas id="interactiveCanvas" style="width: 100%; height: 100%;"></canvas>
+       
+    </div>
+    <section style="position: relative; top: 10px; height: 700px; width: 100%;">
+        <div id="message-container">
+            <h1>Thought to Text progress updates</h1>
+        </div>
+    </section>
+    <!-- Light to follow cursor-->
+    <div class="cursor-light" style="
+    pointer-events: none;
+    width: 1500px;
+    height: 1500px;
+    position: fixed;
+    z-index: 10;
+    background: radial-gradient(
+    700px,
+    rgba(29, 78, 216, 0.15),
+    transparent 100%
+    );
+    "></div>
+    <!-- Nav Bar -->
+    <nav>
+        <div class="logo-text">BCI</div>
+        <a href="./media/Brain.svg" id="logo" style="color: red;"></a>
+        <div class="nav-right" style="justify-content: right;">
+            <a href="index.html" class="nav-items"style="float: right;">Back to main page</a>
+        </div>
+
+        <img src="./media/burger-menu.svg" alt="Menu" id="hamburger-menu">
+    </nav>
+
+    <section class="about" id="updates" >
+
+        <h2>Our updates</h2>
+        <div style="display: flex;margin-top: 20px; flex-wrap: wrap;">
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>Project Overview - December 2025</h3>
+                <p style="margin-top: 10px;">
+                    The Thought to Text BCI project is developing a brain-computer interface that directly translates EEG brain signals into text in real-time. Our goal is to help millions of individuals with severe motor disabilities, including those with ALS, cerebral palsy, and locked-in syndrome, who face significant barriers to communication. Current assistive technologies average just 2-10 words per minute, far below the natural pace of human thought. We're building a system that can enable functional communication at speeds closer to natural conversation.
+                    <br><br>
+                    <strong>Technical Solution:</strong>
+                    <br>• Hardware: 16-channel OpenBCI Think Pulse system
+                    <br>• Architecture: EEGNet feature extraction + LSTM encoding
+                    <br>• Vocabulary: 30+ words for functional communication
+                    <br>• Performance target: Real-time inference under 100ms latency
+                    <br>• Signal Flow: EEG Acquisition → Feature Extraction (EEGNet) → Temporal Encoding (LSTM) → Text Prediction
+                </p>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>Modular Data Architecture</h3>
+                <p style="margin-top: 10px;">
+                    Our innovation centers on a unified inference engine that operates across three distinct data sources, enabling rapid development and robust real-world deployment:
+                    <br><br>
+                    <strong>1. Simulated Data (✓ Complete)</strong>
+                    <br>Synthetic EEG patterns with known ground-truth labels enable fast algorithm iteration without hardware dependencies. Achieved 93-97% classification accuracy during initial development phase.
+                    <br><br>
+                    <strong>2. Recorded Playback (● Current Focus)</strong>
+                    <br>Real EEG recordings played back at variable speeds (0.1x - 10x) allow comprehensive testing on authentic brain signals. Includes labeled data for evaluation and offline debugging capabilities.
+                    <br><br>
+                    <strong>3. Live Streaming (⚙ In Development - 40% Complete)</strong>
+                    <br>Real-time EEG acquisition with thread-safe buffered streaming architecture. Designed for continuous inference with sub-100ms latency for responsive user interaction.
+                    <br><br>
+                    <strong>Key Technical Advantage:</strong> Train once on any data source, test seamlessly across all modes, deploy everywhere without retraining.
+                </p>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>Current Work: Recording Real Brain Signals</h3>
+                <p style="margin-top: 10px;">
+                    <strong>Playback System Operational:</strong>
+                    <br>✓ Recording pipeline with session management
+                    <br>✓ Variable-speed playback (0.1x - 10x)
+                    <br>✓ Label synchronization framework
+                    <br>✓ Offline evaluation and debugging tools
+                    <br>✓ Hardware-independent testing workflow
+                    <br><br>
+                    <strong>Hardware Configuration:</strong>
+                    <br>OpenBCI Think Pulse 16-Channel Kit with wireless Bluetooth connectivity, 256Hz sampling rate, active electrodes for superior signal quality, and research-grade acquisition capabilities.
+                    <br><br>
+                    <strong>Active Data Collection:</strong>
+                    <br>We're currently recording team member EEG sessions to build a robust labeled dataset. Target: 100+ hours of diverse thought patterns capturing vocabulary variations and individual neural signatures.
+                    <br><br>
+                    <strong>The Live Streaming Challenge:</strong>
+                    <br>Transitioning from controlled playback to unpredictable live streaming introduces critical engineering challenges: real-time artifact rejection, managing environmental noise, maintaining sub-100ms latency, and implementing continuous model adaptation. These represent our immediate technical focus.
+                </p>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>Next Steps: Going Live (4-8 Weeks)</h3>
+                <p style="margin-top: 10px;">
+                    <strong>Immediate Milestones:</strong>
+                    <br><br>
+                    <strong>1. Complete Live Data Pipeline</strong>
+                    <br>Finalize thread-safe streaming architecture, implement real-time artifact rejection algorithms, and deploy adaptive filtering for environmental noise suppression.
+                    <br><br>
+                    <strong>2. Initial Live Testing Protocol</strong>
+                    <br>Conduct team member live inference sessions, benchmark end-to-end latency and classification accuracy, and compare playback versus live performance metrics.
+                    <br><br>
+                    <strong>3. Data Collection Sprint</strong>
+                    <br>Record 50+ hours of labeled EEG data across 5+ subjects, capturing diverse vocabulary usage patterns and individual neural variability.
+                    <br><br>
+                    <strong>4. Model Optimization</strong>
+                    <br>Fine-tune on real (non-simulated) neural data, implement online learning capabilities, and develop subject-specific calibration procedures.
+                    <br><br>
+                    <strong>Success Metrics:</strong>
+                    <br>• <100ms Latency Target - Real-time inference response
+                    <br>• 70% Live Accuracy - Classification on real signals
+                    <br>• 90% Signal Quality - Usable data percentage
+                </p>
+            </div>
+            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
+                <h3>Long-Term Vision (6 Months)</h3>
+                <p style="margin-top: 10px;">
+                    Our roadmap for the next six months includes:
+                    <br>• Expand vocabulary to 50+ words for more comprehensive communication
+                    <br>• Develop user-facing GUI application for accessibility and ease of use
+                    <br>• Establish accessibility community testing partnerships to validate real-world effectiveness
+                    <br>• Continue refining model performance with diverse user data
+                    <br>• Explore deployment pathways for individuals with communication disabilities
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
