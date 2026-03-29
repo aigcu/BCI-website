@@ -1,143 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAIR | BCI</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="app.js" defer></script>
+    <title>CAIR | BCI – Thought to Text</title>
 
-    <!--Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <!--Favicon-->
-    <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Montserrat', sans-serif; background-color: #150c25; }
+        .hero-section {
+            position: relative;
+            background: linear-gradient(160deg, #522398 0%, #331970 50%, #150c25 100%);
+            color: #fff;
+            text-align: center;
+            padding: 15rem 1rem;
+            overflow: hidden;
+        }
+        #particles-hero { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+        .hero-section .container { position: relative; z-index: 1; margin-top: 5rem; }
+        .section-title { color: #7933e1; font-weight: 600; margin-bottom: 1.5rem; }
+        .update-box {
+            background: #150c25;
+            color: #fff;
+            border-left: 6px solid #7933e1;
+            box-shadow: 0 3px 8px rgba(0,0,0,.3);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: box-shadow 0.3s ease;
+        }
+        .update-box:hover { box-shadow: 0 0 15px rgba(255,255,255,0.8); }
+        .update-box h5 { color: #7933e1; font-weight: 600; margin-bottom: .75rem; }
+        .update-box ul { padding-left: 1.25rem; }
+        .update-box ul li { color: #b0b8c0; font-size: 1rem; margin-bottom: .4rem; }
+        .navbar-dark { background-color: #150c25 !important; }
+        .navbar { height: 100px; }
+        .navbar-nav .nav-link { transition: text-shadow 0.3s ease; color: white !important; }
+        .navbar-nav .nav-link:hover { text-shadow: 0 0 8px rgba(255,255,255,0.9); }
+        .updates-section { background-color: #111219; }
+        p { color: #b0b8c0; }
+        .badge-stat {
+            display: inline-block;
+            background: #7933e1;
+            color: white;
+            padding: .25rem .75rem;
+            border-radius: 20px;
+            font-size: .85rem;
+            font-weight: 600;
+            margin: .2rem .1rem;
+        }
+        .team-section { background-color: #111219; }
+        .member-card {
+            background: #150c25;
+            color: #fff;
+            border: 1px solid #7933e1;
+            box-shadow: 0 2px 6px rgba(0,0,0,.4);
+            padding: 1.5rem;
+            transition: box-shadow 0.3s ease;
+        }
+        .member-card:hover { box-shadow: 0 0 15px rgba(255,255,255,0.8); }
+        .member-card .text-muted { color: #b0b8c0 !important; }
+        .member-photo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #7933e1;
+            margin-bottom: 0.75rem;
+        }
+        .icons { color: #7933e1; text-decoration: none; transition: text-shadow 0.3s ease; }
+        .icons:hover { text-shadow: 0 0 8px rgba(255,255,255,0.9); }
+        .icons i { font-size: 1.4rem; }
+    </style>
 </head>
 <body>
-    <div class="canvas-container">
-        <canvas id="interactiveCanvas" style="width: 100%; height: 100%;"></canvas>
-       
+    <!-- Nav -->
+    <div class="row fixed-top mx-auto" style="background-color:#150c25;">
+        <nav class="navbar navbar-expand-lg py-3">
+            <a class="navbar-brand ms-3 ms-md-5" href="index.html">
+                <span style="color:#7933e1; font-size:1.8rem; font-weight:700; letter-spacing:2px;">BCI</span>
+            </a>
+            <button class="navbar-toggler ml-auto me-3 navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end me-4" id="navbarNav">
+                <ul class="navbar-nav ms-3 mt-3 ms-lg-0 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">← Back to Main Page</a></li>
+                </ul>
+            </div>
+        </nav>
     </div>
-    <section style="position: relative; top: 10px; height: 700px; width: 100%;">
-        <div id="message-container">
-            <h1>Thought to Text progress updates</h1>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div id="particles-hero"></div>
+        <div class="container">
+            <h1 class="display-5 fw-bold">Thought to Text</h1>
+            <p class="lead mt-3">Translating EEG brain signals into text in real-time — enabling functional communication for individuals with severe motor disabilities.</p>
         </div>
     </section>
-    <!-- Light to follow cursor-->
-    <div class="cursor-light" style="
-    pointer-events: none;
-    width: 1500px;
-    height: 1500px;
-    position: fixed;
-    z-index: 10;
-    background: radial-gradient(
-    700px,
-    rgba(29, 78, 216, 0.15),
-    transparent 100%
-    );
-    "></div>
-    <!-- Nav Bar -->
-    <nav>
-        <div class="logo-text">BCI</div>
-        <a href="./media/Brain.svg" id="logo" style="color: red;"></a>
-        <div class="nav-right" style="justify-content: right;">
-            <a href="index.html" class="nav-items"style="float: right;">Back to main page</a>
-        </div>
 
-        <img src="./media/burger-menu.svg" alt="Menu" id="hamburger-menu">
-    </nav>
+    <!-- Updates -->
+    <section id="updates" class="updates-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Project Updates</h2>
 
-    <section class="about" id="updates" >
+            <div class="update-box mx-auto" style="max-width:850px;">
+                <h5>Project Update – April 2026</h5>
+                <p>The Thought to Text project is progressing well. Key developments this month:</p>
+                <ul>
+                    <li><strong>Data Collection App:</strong> Adapted Obadiah's data collection application for use by the Thought to Text team, streamlining our EEG recording workflow and enabling more consistent, structured data capture sessions.</li>
+                    <li><strong>Improved AI Model:</strong> Integrated data filtering techniques to clean EEG signals prior to model input, significantly improving signal quality and reducing noise artifacts.</li>
+                    <li><strong>EEGConformer Architecture:</strong> Upgraded the model architecture to EEGConformer — a transformer-based approach designed specifically for EEG classification — improving our ability to capture both local and global temporal patterns in brain signal data.</li>
+                </ul>
+            </div>
 
-        <h2>Our updates</h2>
-        <div style="display: flex;margin-top: 20px; flex-wrap: wrap;">
-            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
-                <h3>Project Overview - December 2025</h3>
-                <p style="margin-top: 10px;">
-                    The Thought to Text BCI project is developing a brain-computer interface that directly translates EEG brain signals into text in real-time. Our goal is to help millions of individuals with severe motor disabilities, including those with ALS, cerebral palsy, and locked-in syndrome, who face significant barriers to communication. Current assistive technologies average just 2-10 words per minute, far below the natural pace of human thought. We're building a system that can enable functional communication at speeds closer to natural conversation.
-                    <br><br>
-                    <strong>Technical Solution:</strong>
-                    <br>• Hardware: 16-channel OpenBCI Think Pulse system
-                    <br>• Architecture: EEGNet feature extraction + LSTM encoding
-                    <br>• Vocabulary: 30+ words for functional communication
-                    <br>• Performance target: Real-time inference under 100ms latency
-                    <br>• Signal Flow: EEG Acquisition → Feature Extraction (EEGNet) → Temporal Encoding (LSTM) → Text Prediction
-                </p>
+            <div class="update-box mx-auto" style="max-width:850px;">
+                <h5>Project Overview – December 2025</h5>
+                <p>The Thought to Text BCI project develops a brain-computer interface that directly translates EEG brain signals into text in real-time. Our goal is to help millions of individuals with severe motor disabilities — including those with ALS, cerebral palsy, and locked-in syndrome — who face significant communication barriers. Current assistive technologies average just 2–10 words per minute, far below the natural pace of human thought.</p>
+                <ul>
+                    <li><strong>Hardware:</strong> 16-channel OpenBCI Think Pulse system</li>
+                    <li><strong>Architecture:</strong> EEGNet feature extraction + LSTM encoding</li>
+                    <li><strong>Vocabulary:</strong> 30+ words for functional communication</li>
+                    <li><strong>Performance target:</strong> Real-time inference under 100ms latency</li>
+                    <li><strong>Signal flow:</strong> EEG Acquisition → Feature Extraction (EEGNet) → Temporal Encoding (LSTM) → Text Prediction</li>
+                </ul>
             </div>
-            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
-                <h3>Modular Data Architecture</h3>
-                <p style="margin-top: 10px;">
-                    Our innovation centers on a unified inference engine that operates across three distinct data sources, enabling rapid development and robust real-world deployment:
-                    <br><br>
-                    <strong>1. Simulated Data (✓ Complete)</strong>
-                    <br>Synthetic EEG patterns with known ground-truth labels enable fast algorithm iteration without hardware dependencies. Achieved 93-97% classification accuracy during initial development phase.
-                    <br><br>
-                    <strong>2. Recorded Playback (● Current Focus)</strong>
-                    <br>Real EEG recordings played back at variable speeds (0.1x - 10x) allow comprehensive testing on authentic brain signals. Includes labeled data for evaluation and offline debugging capabilities.
-                    <br><br>
-                    <strong>3. Live Streaming (⚙ In Development - 40% Complete)</strong>
-                    <br>Real-time EEG acquisition with thread-safe buffered streaming architecture. Designed for continuous inference with sub-100ms latency for responsive user interaction.
-                    <br><br>
-                    <strong>Key Technical Advantage:</strong> Train once on any data source, test seamlessly across all modes, deploy everywhere without retraining.
-                </p>
+
+            <div class="update-box mx-auto" style="max-width:850px;">
+                <h5>Modular Data Architecture</h5>
+                <p>Our innovation centers on a unified inference engine operating across three distinct data sources — enabling rapid development and robust real-world deployment:</p>
+                <ul>
+                    <li><strong>✓ Simulated Data (Complete):</strong> Synthetic EEG patterns with known ground-truth labels. Achieved 93–97% classification accuracy during initial development.</li>
+                    <li><strong>● Recorded Playback (Current Focus):</strong> Real EEG recordings played back at variable speeds (0.1x–10x), including labeled data for offline debugging.</li>
+                    <li><strong>⚙ Live Streaming (40% Complete):</strong> Real-time EEG acquisition with thread-safe buffered streaming, designed for sub-100ms continuous inference.</li>
+                </ul>
+                <p><strong style="color:#fff;">Key advantage:</strong> Train once on any data source — deploy everywhere without retraining.</p>
             </div>
-            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
-                <h3>Current Work: Recording Real Brain Signals</h3>
-                <p style="margin-top: 10px;">
-                    <strong>Playback System Operational:</strong>
-                    <br>✓ Recording pipeline with session management
-                    <br>✓ Variable-speed playback (0.1x - 10x)
-                    <br>✓ Label synchronization framework
-                    <br>✓ Offline evaluation and debugging tools
-                    <br>✓ Hardware-independent testing workflow
-                    <br><br>
-                    <strong>Hardware Configuration:</strong>
-                    <br>OpenBCI Think Pulse 16-Channel Kit with wireless Bluetooth connectivity, 256Hz sampling rate, active electrodes for superior signal quality, and research-grade acquisition capabilities.
-                    <br><br>
-                    <strong>Active Data Collection:</strong>
-                    <br>We're currently recording team member EEG sessions to build a robust labeled dataset. Target: 100+ hours of diverse thought patterns capturing vocabulary variations and individual neural signatures.
-                    <br><br>
-                    <strong>The Live Streaming Challenge:</strong>
-                    <br>Transitioning from controlled playback to unpredictable live streaming introduces critical engineering challenges: real-time artifact rejection, managing environmental noise, maintaining sub-100ms latency, and implementing continuous model adaptation. These represent our immediate technical focus.
-                </p>
+
+            <div class="update-box mx-auto" style="max-width:850px;">
+                <h5>Current Work: Recording Real Brain Signals</h5>
+                <p><strong style="color:#fff;">Playback System Operational:</strong></p>
+                <ul>
+                    <li>Recording pipeline with session management</li>
+                    <li>Variable-speed playback (0.1x – 10x)</li>
+                    <li>Label synchronization framework</li>
+                    <li>Offline evaluation and debugging tools</li>
+                    <li>Hardware-independent testing workflow</li>
+                </ul>
+                <p><strong style="color:#fff;">Hardware:</strong> OpenBCI Think Pulse 16-Channel Kit — wireless Bluetooth, 256Hz sampling rate, active electrodes for superior signal quality.</p>
+                <p>Currently recording team member EEG sessions to build a labeled dataset. Target: 100+ hours of diverse thought patterns capturing vocabulary variations and individual neural signatures.</p>
             </div>
-            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
-                <h3>Next Steps: Going Live (4-8 Weeks)</h3>
-                <p style="margin-top: 10px;">
-                    <strong>Immediate Milestones:</strong>
-                    <br><br>
-                    <strong>1. Complete Live Data Pipeline</strong>
-                    <br>Finalize thread-safe streaming architecture, implement real-time artifact rejection algorithms, and deploy adaptive filtering for environmental noise suppression.
-                    <br><br>
-                    <strong>2. Initial Live Testing Protocol</strong>
-                    <br>Conduct team member live inference sessions, benchmark end-to-end latency and classification accuracy, and compare playback versus live performance metrics.
-                    <br><br>
-                    <strong>3. Data Collection Sprint</strong>
-                    <br>Record 50+ hours of labeled EEG data across 5+ subjects, capturing diverse vocabulary usage patterns and individual neural variability.
-                    <br><br>
-                    <strong>4. Model Optimization</strong>
-                    <br>Fine-tune on real (non-simulated) neural data, implement online learning capabilities, and develop subject-specific calibration procedures.
-                    <br><br>
-                    <strong>Success Metrics:</strong>
-                    <br>• <100ms Latency Target - Real-time inference response
-                    <br>• 70% Live Accuracy - Classification on real signals
-                    <br>• 90% Signal Quality - Usable data percentage
-                </p>
+
+            <div class="update-box mx-auto" style="max-width:850px;">
+                <h5>Next Steps: Going Live (4–8 Weeks)</h5>
+                <ul>
+                    <li><strong>Complete Live Data Pipeline:</strong> Finalize thread-safe streaming, implement real-time artifact rejection, and deploy adaptive filtering.</li>
+                    <li><strong>Initial Live Testing Protocol:</strong> Conduct team member live inference sessions and benchmark end-to-end latency and classification accuracy.</li>
+                    <li><strong>Data Collection Sprint:</strong> Record 50+ hours of labeled EEG across 5+ subjects, capturing diverse vocabulary patterns.</li>
+                    <li><strong>Model Optimization:</strong> Fine-tune on real neural data, implement online learning, and develop subject-specific calibration.</li>
+                </ul>
+                <div class="mt-3">
+                    <span class="badge-stat">&lt;100ms Latency Target</span>
+                    <span class="badge-stat">70% Live Accuracy Goal</span>
+                    <span class="badge-stat">90% Signal Quality Target</span>
+                </div>
             </div>
-            <div style="display: flex; flex-direction: column; margin-right: 45px; margin-top: 20px;">
-                <h3>Long-Term Vision (6 Months)</h3>
-                <p style="margin-top: 10px;">
-                    Our roadmap for the next six months includes:
-                    <br>• Expand vocabulary to 50+ words for more comprehensive communication
-                    <br>• Develop user-facing GUI application for accessibility and ease of use
-                    <br>• Establish accessibility community testing partnerships to validate real-world effectiveness
-                    <br>• Continue refining model performance with diverse user data
-                    <br>• Explore deployment pathways for individuals with communication disabilities
-                </p>
+
+            <div class="update-box mx-auto" style="max-width:850px;">
+                <h5>Long-Term Vision (6 Months)</h5>
+                <ul>
+                    <li>Expand vocabulary to 50+ words for more comprehensive communication</li>
+                    <li>Develop user-facing GUI application for accessibility and ease of use</li>
+                    <li>Establish accessibility community testing partnerships</li>
+                    <li>Continue refining model performance with diverse user data</li>
+                    <li>Explore deployment pathways for individuals with communication disabilities</li>
+                </ul>
             </div>
         </div>
     </section>
+
+    <!-- Team Section -->
+    <section class="py-5 team-section" id="team">
+        <div class="container">
+            <h2 class="section-title text-center">Meet the Team</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="member-card text-center h-100">
+                        <img src="media/team/JoshuaPeek.jpg" alt="Joshua Peek" class="member-photo">
+                        <h5 class="fw-bold mb-1">Joshua Peek</h5>
+                        <p class="text-muted mb-2">Head of ML Model Architecture & Implementation</p>
+                        <div>
+                            <a href="https://www.linkedin.com/in/josh-peek-b23a09280/" class="icons me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:joshua@example.com" class="icons"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="member-card text-center h-100">
+                        <img src="media/team/JustinDiazZapata.jpg" alt="Justin Diaz Zapata" class="member-photo">
+                        <h5 class="fw-bold mb-1">Justin Diaz Zapata</h5>
+                        <p class="text-muted mb-2">Data Collector</p>
+                        <div>
+                            <a href="https://www.linkedin.com/in/justin-diaz-zapata-8761ab276/" class="icons me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:justin@example.com" class="icons"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="member-card text-center h-100">
+                        <img src="media/team/RyanZdonek.jpg" alt="Ryan Zdonek" class="member-photo">
+                        <h5 class="fw-bold mb-1">Ryan Zdonek</h5>
+                        <p class="text-muted mb-2">Data Collector</p>
+                        <div>
+                            <a href="https://www.linkedin.com/in/ryan-zdonek/" class="icons me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:ryanzdonek@gmail.com" class="icons"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-3">
+        <div class="container">
+            <small>&copy; 2026 — Canyon AI Research | Brain-Computer Interface Team</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-hero", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#7933e1" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                line_linked: { enable: true, distance: 150, color: "#7933e1", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2 }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" } },
+                modes: { repulse: { distance: 100, duration: 0.4 } }
+            },
+            retina_detect: true
+        });
+    </script>
 </body>
 </html>
