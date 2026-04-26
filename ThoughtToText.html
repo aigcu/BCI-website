@@ -78,6 +78,10 @@
         .icons { color: #7933e1; text-decoration: none; transition: text-shadow 0.3s ease; }
         .icons:hover { text-shadow: 0 0 8px rgba(255,255,255,0.9); }
         .icons i { font-size: 1.4rem; }
+        .legacy-section { background-color: #150c25; }
+        .legacy-card { border-color: #4a3060; opacity: 0.85; }
+        .legacy-photo { border-color: #4a3060; filter: grayscale(30%); }
+        .legacy-tenure { color: #7933e1; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.03em; }
     </style>
 </head>
 <body>
@@ -93,6 +97,7 @@
             <div class="collapse navbar-collapse justify-content-end me-4" id="navbarNav">
                 <ul class="navbar-nav ms-3 mt-3 ms-lg-0 mt-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#legacy">Legacy</a></li>
                     <li class="nav-item"><a class="nav-link" href="index.html">← Back to Main Page</a></li>
                 </ul>
             </div>
@@ -114,12 +119,12 @@
             <h2 class="section-title text-center">Project Updates</h2>
 
             <div class="update-box mx-auto" style="max-width:850px;">
-                <h5>Project Update – April 2026</h5>
-                <p>The Thought to Text project is progressing well. Key developments this month:</p>
+                <h5>Update – April 2026</h5>
+                <p>The Thought to Text project has wrapped up a strong semester. Key highlights:</p>
                 <ul>
-                    <li><strong>Data Collection App:</strong> Adapted Obadiah's data collection application for use by the Thought to Text team, streamlining our EEG recording workflow and enabling more consistent, structured data capture sessions.</li>
-                    <li><strong>Improved AI Model:</strong> Integrated data filtering techniques to clean EEG signals prior to model input, significantly improving signal quality and reducing noise artifacts.</li>
-                    <li><strong>EEGConformer Architecture:</strong> Upgraded the model architecture to EEGConformer — a transformer-based approach designed specifically for EEG classification — improving our ability to capture both local and global temporal patterns in brain signal data.</li>
+                    <li><strong>Data Collection App:</strong> Delivered several bug fixes to the adapted data collection application, improving stability and reliability across recording sessions.</li>
+                    <li><strong>Canyon Undergraduate Research Conference:</strong> The team presented the Thought to Text project at the Canyon Undergraduate Research Conference. Joshua Peek, Justin Diaz Zapata, and Ryan Zdonek represented the project, sharing our progress on EEG-based text prediction and the EEGConformer architecture.</li>
+                    <li><strong>Leadership Transition:</strong> With this update, we are proud to announce that Justin Diaz Zapata will be taking over as project lead going forward. Thank you to Joshua Peek and Ryan Zdonek for their foundational contributions to the project.</li>
                 </ul>
             </div>
 
@@ -195,9 +200,31 @@
             <div class="row g-4 justify-content-center">
                 <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="member-card text-center h-100">
-                        <img src="media/team/JoshuaPeek2.jpg" alt="Joshua Peek" class="member-photo">
+                        <img src="media/team/JustinDiazZapata.jpg" alt="Justin Diaz Zapata" class="member-photo">
+                        <h5 class="fw-bold mb-1">Justin Diaz Zapata</h5>
+                        <p class="text-muted mb-2">Project Lead</p>
+                        <div>
+                            <a href="https://www.linkedin.com/in/justin-diaz-zapata-8761ab276/" class="icons me-2"><i class="fab fa-linkedin"></i></a>
+                            <a href="mailto:justin@example.com" class="icons"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Members Section -->
+    <section class="py-5 legacy-section" id="legacy">
+        <div class="container">
+            <h2 class="section-title text-center">Legacy Members</h2>
+            <p class="text-center mb-4" style="color:#b0b8c0;">Thank you to the members who helped build this project from the ground up.</p>
+            <div class="row g-4 justify-content-center">
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="member-card legacy-card text-center h-100">
+                        <img src="media/team/JoshuaPeek.jpg" alt="Joshua Peek" class="member-photo legacy-photo">
                         <h5 class="fw-bold mb-1">Joshua Peek</h5>
-                        <p class="text-muted mb-2">Head of ML Model Architecture & Implementation</p>
+                        <p class="text-muted mb-1">Team Lead & Head of AI Model Design and Implementation</p>
+                        <p class="legacy-tenure mb-2">September 2024 – April 2026</p>
                         <div>
                             <a href="https://www.linkedin.com/in/josh-peek-b23a09280/" class="icons me-2"><i class="fab fa-linkedin"></i></a>
                             <a href="mailto:joshua@example.com" class="icons"><i class="fas fa-envelope"></i></a>
@@ -205,21 +232,11 @@
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="member-card text-center h-100">
-                        <img src="media/team/JustinDiazZapata.jpg" alt="Justin Diaz Zapata" class="member-photo">
-                        <h5 class="fw-bold mb-1">Justin Diaz Zapata</h5>
-                        <p class="text-muted mb-2">Data Collector</p>
-                        <div>
-                            <a href="https://www.linkedin.com/in/justin-diaz-zapata-8761ab276/" class="icons me-2"><i class="fab fa-linkedin"></i></a>
-                            <a href="mailto:justin@example.com" class="icons"><i class="fas fa-envelope"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="member-card text-center h-100">
-                        <img src="media/team/RyanZdonek.jpg" alt="Ryan Zdonek" class="member-photo">
+                    <div class="member-card legacy-card text-center h-100">
+                        <img src="media/team/RyanZdonek.jpg" alt="Ryan Zdonek" class="member-photo legacy-photo">
                         <h5 class="fw-bold mb-1">Ryan Zdonek</h5>
-                        <p class="text-muted mb-2">Data Collector</p>
+                        <p class="text-muted mb-1">Data Collector</p>
+                        <p class="legacy-tenure mb-2">October 2025 – April 2026</p>
                         <div>
                             <a href="https://www.linkedin.com/in/ryan-zdonek/" class="icons me-2"><i class="fab fa-linkedin"></i></a>
                             <a href="mailto:ryanzdonek@gmail.com" class="icons"><i class="fas fa-envelope"></i></a>
